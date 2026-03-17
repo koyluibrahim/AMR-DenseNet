@@ -66,7 +66,7 @@ history = model.fit(X_train, Y_train,
 )
 
 # Visualize and export training history (Loss/Accuracy curves)
-mltools.show_history(history)
+mltools.show_history(history, save_path=f'{base_path}/figure')
 
 # --- Post-Training Analysis and Metrics ---
 def predict(model):
