@@ -5,9 +5,6 @@ import tensorflow as tf
 from tensorflow import keras
 from tensorflow.keras import layers, models, optimizers
 
-# --- Drive and Directory Configuration ---
-from google.colab import drive
-drive.mount('/content/drive')
 
 # Define global paths for persistent storage
 base_path = '/content/drive/MyDrive/AMR_DenseNet_Projesi'
