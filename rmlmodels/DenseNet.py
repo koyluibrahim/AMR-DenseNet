@@ -5,7 +5,7 @@ from tensorflow.keras.layers import (
     Input, Dense, ReLU, Dropout, Softmax, Conv2D, 
     MaxPool2D, Add, concatenate, Activation, Flatten
 )
-# CuDNNGRU yerine standart GRU kullanılır, TF arka planda GPU varsa otomatik optimize eder
+
 from tensorflow.keras.layers import Bidirectional, GRU 
 
 def DenseNet(weights=None,
@@ -53,7 +53,6 @@ def DenseNet(weights=None,
 
     return model
 
-# Test amaçlı çalıştırma kısmı
 if __name__ == '__main__':
     from tensorflow import keras
     model = DenseNet(None, input_shape=[2, 128], classes=11)
