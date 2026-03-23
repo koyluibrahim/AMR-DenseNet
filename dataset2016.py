@@ -12,7 +12,7 @@ def load_data(filename='RML2016.10a_dict.pkl'):
         else:
             raise FileNotFoundError(f"{filename} bulunamadı! Lütfen veri setini Colab'e yükleyin.")
 
-    # Veriyi yükle (encoding='iso-8859-1' Python 3 uyumu için şarttı, eklenmiş)
+    # Veriyi yükle
     with open(filename, 'rb') as f:
         Xd = pickle.load(f, encoding='iso-8859-1')
     
