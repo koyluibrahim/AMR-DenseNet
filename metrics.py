@@ -5,7 +5,6 @@ import matplotlib.pyplot as plt
 from sklearn.metrics import classification_report
 import tensorflow as tf
 
-# Kendi modüllerini içe aktar
 import dataset2016
 import mltools
 import rmlmodels.DenseNet as mcl
