@@ -5,6 +5,11 @@ import tensorflow as tf
 from tensorflow import keras
 from tensorflow.keras import layers, models, optimizers
 
+# Define global paths for persistent storage
+base_path = '/content/drive/MyDrive/AMR_DenseNet_Projesi'
+os.makedirs(f"{base_path}/weights", exist_ok=True)
+os.makedirs(f"{base_path}/figure", exist_ok=True)
+os.makedirs(f"{base_path}/predictresult", exist_ok=True)
 
 # Ensure local directories exist for temporary runtime safety
 os.makedirs('weights', exist_ok=True)
