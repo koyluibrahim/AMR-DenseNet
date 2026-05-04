@@ -1,16 +1,23 @@
 import pickle
 import numpy as np
 import os
+import gdown
 
 def load_data(filename='RML2016.10a_dict.pkl'):
     # Colab veya yerel dizinde dosyanın varlığını kontrol et
     if not os.path.exists(filename):
-        # Eğer dosya mevcut değilse Google Drive yolunu dene veya hata ver
-        drive_path = '/content/drive/MyDrive/RML2016.10a_dict.pkl'
-        if os.path.exists(drive_path):
-            filename = drive_path
+        # Dosyayı indirmek için gdown kullanımı
+        url = f'https://drive.google.com/uc?id=1MgQxlvKlN78olxcIqgGXUyM69kzVkHMs'
+        gdown.download(url, filename, quiet=False)
+        
+        # İndirme işleminden sonra dosyanın gelip gelmediğini kontrol et
+        if not os.path.exists(filename):
+            raise FileNotFoundError(f"{filename} indirilemedi! Lütfen linkin herkese açık olduğundan ve ID'nin doğruluğundan emin olun.")
         else:
-            raise FileNotFoundError(f"{filename} bulunamadı! Lütfen veri setini Colab'e yükleyin.")
+            print("Veri seti başarıyla indirildi!")
+    else:
+        print(f"{filename} zaten çalışma dizininde mevcut.")
+
 
     # Veriyi yükle
     with open(filename, 'rb') as f:
